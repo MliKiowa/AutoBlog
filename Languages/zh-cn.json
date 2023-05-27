@@ -2,5 +2,7 @@
   "Project": "AutoBlog",
   "Author": "Mlikiowa",
   "Version": "1.0.0",
-  "Introduction": "自动化管理博客的工具"
+  "Introduction": "自动化管理博客的工具",
+  "debugo1": "加载Lib: ",
+  "error": "错误啦"
 }
