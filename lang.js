@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 var lang = null;
-var langcode = null;
+var langCode = null;
 async function loadLanguage(languageCode) {
   try {
     languageCode = langcode;
