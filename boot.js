@@ -2,9 +2,10 @@ const minimist = require('minimist'); // 引入minimist模块，用于数字命�
 var langHelper = require("./lang.js");
 const defaultLang= 'zh-cn';
 const args = minimist(process.argv.slice(2));
-console.log(langCode);
+
 var langCode = args.lang || defaultLang;
 // 语言加载
+console.log(langCode);
 langHelper.loadLanguage(langCode);
 var lang = langHelper.lang;
 
