@@ -1,8 +1,9 @@
-function loadLanguage(languageCode) {
-  try {
-    const data = fs.readFileSync(`./Languages/${languageCode}.json`);
-    const language = JSON.parse(data);
-    return language;
+const fs = require('fs').promises;
+const path = require('path');
+let lang = null;
+async function loadLanguage(languageCode) {
+    const data = await fs.readFile(path.join(__dirname, 'Languages', `${languageCode}.json`), 'utf-8');
+    return JSON.parse(data);
   } catch (error) {
     console.error(`Error loading language file for ${languageCode}: ${error}`);
     return undefined;
@@ -17,9 +18,10 @@ if (process.argv.length <= 2) {
 // 解析命令行参数
 const args = minimist(process.argv.slice(2));
 // 获取语言参数，如果没有则默认为 'zh-cn'
-var langCode = args.lang || defaultLang;
-var lang = loadLanguage(langCode);
+const langCode = args.lang || defaultLang;
+const lang = await loadLanguage(langCode);
 module.exports = {
   langCode: langCode,
   lang:lang
 };
+
