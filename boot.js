@@ -13,12 +13,16 @@ console.log(lang);
 const path = require('path');
 const fs = require('fs');
 
+const path = require('path');
+const fs = require('fs');
+
 function readDirFiles(dirPath) {
   const fileList = [];
-  const files = fs.readdirSync(dirPath, { withFileTypes: true });
+  const libPath = path.join(__dirname, '../Lib');
+  const files = fs.readdirSync(libPath, { withFileTypes: true });
   for (const file of files) {
     if (file.isFile() && path.extname(file.name) === '.js') {
-      fileList.push(path.join(dirPath, 'lib', file.name)); // 修改这里的路径
+      fileList.push(path.join(libPath, file.name));
     }
   }
   return fileList;
