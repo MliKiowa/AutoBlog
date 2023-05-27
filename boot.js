@@ -1,7 +1,8 @@
 const minimist = require('minimist'); // 引入minimist模块，用于数字命令行参数
 var langHelper = require("./lang.js");
 const args = minimist(process.argv.slice(2));
-const langCode = args.lang || defaultLang;
+console.log(langCode);
+langCode = args.lang || defaultLang;
 // 语言加载
 langHelper.loadLanguage(langCode);
 var lang = langHelper.lang;
