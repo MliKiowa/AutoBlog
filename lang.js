@@ -4,7 +4,7 @@ var lang = null;
 var langCode = null;
 async function loadLanguage(languageCode) {
   try {
-    languageCode = langcode;
+    langCode = languageCode;
     const data = await fs.readFile(
       path.join(__dirname, 'Languages', `${languageCode}.json`),
       'utf-8'
