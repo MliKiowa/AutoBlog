@@ -8,3 +8,4 @@ var lang = langHelper.lang;
 var langCode= langHelper.langCode;
 const action = args.action || "all";
 //运行action来自 Action库 在运行前加载所有脚手架
+console.log(lang);
