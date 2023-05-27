@@ -1,4 +1,4 @@
-var langHelper = require("./lang.js");
+var langHelper = require("../lang.js");
 var lang = langHelper.lang();
 function runShellScript(scriptName, callback) {
   const { exec } = require('child_process');
