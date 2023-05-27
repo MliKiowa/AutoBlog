@@ -10,3 +10,22 @@ var lang = langHelper.lang();
 const action = args.action || "all";
 //运行action来自 Action库 在运行前加载所有脚手架
 console.log(lang);
+const fs = require('fs');
+
+const path = require('path');
+function readDirFiles(dirPath) {
+  const fileList = [];
+  const files = fs.readdirSync(dirPath, { withFileTypes: true });
+  for (const file of files) {
+    if (file.isFile() && path.extname(file.name) === '.js') {
+      fileList.push(path.join(dirPath, file.name));
+    }
+  }
+  return fileList;
+}
+
+const files = readDirFiles('./Lib');
+for (const file of files) {
+  require(file);
+  consolo(lang["debugo1"]+file);
+}
