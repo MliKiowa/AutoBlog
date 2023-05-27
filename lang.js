@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 var lang = null;
 var langCode = null;
-async function loadLanguage(languageCode) {
+function loadLanguage(languageCode) {
   try {
     langCode = languageCode;
     const data = await fs.readFile(
