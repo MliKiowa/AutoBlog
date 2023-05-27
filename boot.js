@@ -15,10 +15,10 @@ const fs = require('fs');
 
 function readDirFiles(dirPath) {
   const fileList = [];
-  const files = fs.readdirSync(path.join(__dirname, '..', dirPath), { withFileTypes: true });
+  const files = fs.readdirSync(dirPath, { withFileTypes: true });
   for (const file of files) {
     if (file.isFile() && path.extname(file.name) === '.js') {
-      fileList.push(path.join(__dirname, '..', dirPath, file.name));
+      fileList.push(path.join(dirPath, 'lib', file.name)); // 修改这里的路径
     }
   }
   return fileList;
