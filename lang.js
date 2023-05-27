@@ -10,7 +10,6 @@ function loadLanguage(languageCode) {
       'utf-8'
     );
     lang = JSON.parse(data);
-    console.log(lang);
   } catch (error) {
     console.error(`Error loading langauge file for ${languageCode}: ${error}`);
     return undefined;
