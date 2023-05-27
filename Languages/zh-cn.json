@@ -1,6 +1,6 @@
 {
-  "greeting": "你好！",
-  "farewell": "再见",
-  "error": "出错了！"
+  "Project": "AutoBlog",
+  "Author": "Mlikiowa",
+  "Version": "1.0.0",
+  "Introduction": "自动化管理博客的工具"
 }
-
