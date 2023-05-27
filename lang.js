@@ -16,6 +16,8 @@ function loadLanguage(languageCode) {
     return undefined;
   }
 }
+console.log(lang);
+
 module.exports = {
   loadLanguage:loadLanguage,
   langCode: langCode,
