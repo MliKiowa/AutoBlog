@@ -25,13 +25,28 @@ switch (args['_'][0]) {
     // 处理 script 任务
     break;
   case 'version':
-    console.log(' _____     _   _        _ _       ');
-    console.log('|_   _|_ _| |_| |_ __ _| | | ___  ');
-    console.log('  | |/ _` | __| __/ _` | | |/ _ \\ ');
-    console.log('  | | (_| | |_| || (_| | | | (_) |');
-    console.log('  |_|\\__,_|\\__|\\__\\__,_|_|_|\\___/ ');
-    console.log('AutoBlog - 自动化博客处理工具');
-    // 处理 version 任务
+    const chalk = require('chalk');
+    const figlet = require('figlet');
+    figlet.text('Anime', {
+      font: 'ANSI Shadow',
+      horizontalLayout: 'default',
+      verticalLayout: 'default',
+      width: 60,
+      whitespaceBreak: true
+        }, function(err, text) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(chalk.blue(text));
+        console.log(chalk.hex('#FE8BB9')('少女'));
+        console.log('' + chalk.red('    ▂') + chalk.yellow('▃') + chalk.green('▅') + chalk.blue('▆') + chalk.magenta('▇'));
+        console.log(' ' + chalk.red('▉') + chalk.yellow('█') + chalk.green('██') + chalk.blue('██') + chalk.magenta('██') + chalk.yellow('█'));
+        console.log(chalk.red('    ▉▉') + chalk.yellow('█') + chalk.green('██') + chalk.blue('██') + chalk.magenta('██') + chalk.yellow('█'));
+        console.log(chalk.red('    ▉▉') + chalk.yellow('█') + chalk.green('██') + chalk.blue('██') + chalk.magenta('██') + chalk.yellow('█'));
+        console.log(chalk.red('    ▉▉▉▉▉▉▉▉') + chalk.blue('▇'));
+    }
+});
+
     break;
   default:
     console.error('未知的任务类型');
