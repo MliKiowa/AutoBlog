@@ -16,11 +16,10 @@ const fs = require('fs');
 
 function readDirFiles(dirPath) {
   const fileList = [];
-  const libPath = path.join(__dirname, '../Lib');
-  const files = fs.readdirSync(libPath, { withFileTypes: true });
+  const files = fs.readdirSync(dirPath, { withFileTypes: true });
   for (const file of files) {
     if (file.isFile() && path.extname(file.name) === '.js') {
-      fileList.push(path.join(libPath, file.name));
+      fileList.push(path.join(dirPath, file.name));
     }
   }
   return fileList;
@@ -28,6 +27,6 @@ function readDirFiles(dirPath) {
 
 const files = readDirFiles('./Lib');
 for (const file of files) {
-  require(file);
+  require("./"+file);
   consolo(lang["debugo1"]+file);
 }
