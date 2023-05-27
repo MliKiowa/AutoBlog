@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 const minimist = require('minimist'); // 引入minimist模块，用于数字命令行参数
 var langHelper = require("./lang.js");
 const path = require('path');
@@ -25,7 +26,7 @@ switch (args['_'][0]) {
     // 处理 script 任务
     break;
   case 'version':
-    const chalk = require('chalk');
+    
     const figlet = require('figlet');
     figlet.text('Anime', {
       font: 'ANSI Shadow',
