@@ -7,7 +7,7 @@ var langCode = args.lang || defaultLang;
 // 语言加载
 console.log(langCode);
 langHelper.loadLanguage(langCode);
-var lang = langHelper.lang;
+var lang = langHelper.lang();
 console.log(lang);
 
 const action = args.action || "all";
