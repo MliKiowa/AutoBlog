@@ -19,7 +19,7 @@ function loadLanguage(languageCode) {
 console.log(lang);
 
 module.exports = {
-  loadLanguage:loadLanguage,
-  langCode: langCode,
-  lang:lang
+  loadLanguage: loadLanguage,
+  langCode: () => langCode,
+  lang: () => lang
 };
