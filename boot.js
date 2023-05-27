@@ -28,5 +28,5 @@ function readDirFiles(dirPath) {
 const files = readDirFiles('./Lib');
 for (const file of files) {
   require("./"+file);
-  consolo(lang["debugo1"]+file);
+  console(lang["debugo1"]+file);
 }
